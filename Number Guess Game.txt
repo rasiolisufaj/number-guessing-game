@@ -1,0 +1,26 @@
+Features:
+    1. User must be able to enter a number
+    2. The game should tell the user if the generated number is grater or lower than the number he guessed
+    3. User wins when his number is the same as the generated number
+
+Design:
+    1. The program should generated a number at the beginning
+    2. The program should take the user input and store it into a varible
+        2a. After that the userNumber and generatedNumber should be compared
+        2b. The user wins if the numbers match
+        2c. A massage Higher/Lower is shown to the user if the numbers don`t match
+    3. The game should restart after displaying the congrats message
+
+implementation:
+    Hint: take the input by input element at first demo, take it through mic at second demo
+    1. Generate a random number from 1 - 100 and store it into generatedNumber
+    2. Get the user input(the value of the input) & store it into userInput;
+        2a. compare userInput and the generatedNumber 
+        2b. if the userInput is equal to generatedNumber,
+            user Wins, display the congrats message
+            else 
+        2c. if userInput is greater than generatedNumber
+            display GO LOWER
+            else display GO HIGHER
+    3.add a click event at the Play Again button, 
+        when we click , the page refreshes
