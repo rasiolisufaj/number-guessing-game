@@ -8,17 +8,25 @@
     <title>Guess The Number</title>
   </head>
   <body>
+    <div class="popup-wrapper d-none" id="popup">
+      <div class="container">
+        <h2>Congrats! You have guessed the number!</h2>
+        <h2>It was <span id="guessed-number"></span></h2>
+        <button class="play-again">Play Again</button>
+      </div>
+    </div>
+
     <img src="img/mic.png" alt="microphone" />
 
     <h1>Guess a Number Between 1 - 100</h1>
 
     <h3>Speak the number into your microphone</h3>
 
-    <input type="number" class="input-box" id="user-number" />
+    <input type="number" class="input-box" id="user-input" />
 
-    <div class="msg" id="msg">
+    <div class="msg d-none" id="msg">
       <div>You said:</div>
-      <span class="box">20</span>
+      <span class="box" id="span-box"></span>
       <div>GO HIGHER</div>
     </div>
 
