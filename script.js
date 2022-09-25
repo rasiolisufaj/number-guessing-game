@@ -7,22 +7,24 @@ const playAgainBtn = document.querySelector(".play-again");
 let generatedNumber = Math.floor(Math.random() * 100 + 1);
 console.log(generatedNumber);
 
-userInput.addEventListener("focusout", () => {
-  messageBoxElement.classList.remove("d-none");
-  if (+userInput.value === generatedNumber) {
-    popupElement.classList.remove("d-none");
-    guessedNumberElement.innerText = generatedNumber;
-  } else if (userInput.value < generatedNumber) {
-    spanBoxElement.innerText = userInput.value;
-    messageBoxElement.lastElementChild.innerHTML = `GO HIGHER`;
-  } else {
-    spanBoxElement.innerText = userInput.value;
-    messageBoxElement.lastElementChild.innerHTML = `GO LOWER`;
-  }
+userInput.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") {
+    messageBoxElement.classList.remove("d-none");
+    if (+userInput.value === generatedNumber) {
+      popupElement.classList.remove("d-none");
+      guessedNumberElement.innerText = generatedNumber;
+    } else if (userInput.value < generatedNumber) {
+      spanBoxElement.innerText = userInput.value;
+      messageBoxElement.lastElementChild.innerHTML = `GO HIGHER`;
+    } else {
+      spanBoxElement.innerText = userInput.value;
+      messageBoxElement.lastElementChild.innerHTML = `GO LOWER`;
+    }
 
-  if (userInput.value > 100 || userInput.value <= 0) {
-    spanBoxElement.innerText = userInput.value;
-    messageBoxElement.lastElementChild.innerHTML = `Number must be between 1 and 100`;
+    if (userInput.value > 100 || userInput.value <= 0) {
+      spanBoxElement.innerText = userInput.value;
+      messageBoxElement.lastElementChild.innerHTML = `Number must be between 1 and 100`;
+    }
   }
 });
 
