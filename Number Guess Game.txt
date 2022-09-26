@@ -24,3 +24,53 @@ implementation:
             else display GO HIGHER
     3.add a click event at the Play Again button, 
         when we click , the page refreshes
+____________________________________________________________________________
+
+Speechrecognition => Check Methods in MDN
+                  => Check Events (result, end ...)
+
+We will use msg div to make changes.
+
+We need to initialize a Speechrecognition object
+window.SpeechRecognition = window.SpeechRecognition || webkit,, Check
+
+let recognition = new window.SpeechRecognition(); => this gives us an object
+
+// Start recognition
+
+// FUNCTION Capture User Speak
+    get the message = e. ... ... ...
+
+    writeMessage(msg)
+    checkNumber(msg)
+
+// Speak result
+add a result event listener on the object, and call the function that captures user speak [onSpeak]
+
+    The function onSpeak will take an e (event) as parameter, so we can check (DOM)
+
+WE HAVE TO CREATE TWO FUNCTIONS
+
+writeMessage => It will write out what user speaks
+    it will take a msg as parameter
+    change the msgElement html
+
+checkNumber => It will check if it is a valid number, > , < , =
+    it will take a msg as parameter
+    get the number 
+    // Check if valid number
+    if not a number 
+        append the div This is not a valid number at msgEl
+        return;
+    
+    // Check in range
+     > , < 
+    
+    // Check number
+    > random, < random... === random (style the body)
+
+// End SR Service
+when speak recognition event ends we will call recognition.start() Again
+
+so, we will ad an end event listener on recognition and we will call recognition.start()
+

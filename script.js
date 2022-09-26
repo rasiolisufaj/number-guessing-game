@@ -21,7 +21,7 @@ userInput.addEventListener("keypress", (e) => {
       messageBoxElement.lastElementChild.innerHTML = `GO LOWER`;
     }
 
-    if (userInput.value > 100 || userInput.value <= 0) {
+    if (userInput.value > 100 || userInput.value < 1) {
       spanBoxElement.innerText = userInput.value;
       messageBoxElement.lastElementChild.innerHTML = `Number must be between 1 and 100`;
     }
